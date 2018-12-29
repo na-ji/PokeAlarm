@@ -481,7 +481,7 @@ def get_time_as_str(t, timezone=None):
         + disappear_time.strftime("%p").lower()
     # Disappear time in 24h format including seconds, eg "14:30:16"
     time_24 = disappear_time.strftime("%H:%M:%S")
-    return time_left, time_12, time_24
+    return time_left, time_12, time_24, "%d" % (m)
 
 
 # Return the time in seconds
