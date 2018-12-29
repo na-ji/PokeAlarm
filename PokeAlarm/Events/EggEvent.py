@@ -72,9 +72,11 @@ class EggEvent(BaseEvent):
             'hatch_time_left': hatch_time[0],
             '12h_hatch_time': hatch_time[1],
             '24h_hatch_time': hatch_time[2],
+            'hatch_time_left_minutes': hatch_time[3],
             'raid_time_left': raid_end_time[0],
             '12h_raid_end': raid_end_time[1],
             '24h_raid_end': raid_end_time[2],
+            'raid_time_left_minutes': raid_end_time[3],
 
             # Location
             'lat': self.lat,
