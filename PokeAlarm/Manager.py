@@ -627,6 +627,7 @@ class Manager(object):
             self._log.debug("{} monster was skipped because it was "
                             "previously processed.".format(mon.name))
             return
+        self.__cache.monster_expiration(mon.enc_id, mon.disappear_time)
 
         # Check the time remaining
         seconds_left = (mon.disappear_time
@@ -663,7 +664,6 @@ class Manager(object):
             self._rule_log.info(
                 'Monster %s passed %s rule(s) and triggered %s alarm(s).',
                 mon.name, rule_ct, alarm_ct)
-            self.__cache.monster_expiration(mon.enc_id, mon.disappear_time)
         else:
             self._rule_log.info('Monster %s rejected by all rules.', mon.name)
 
